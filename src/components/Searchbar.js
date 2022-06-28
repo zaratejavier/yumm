@@ -1,6 +1,7 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import './Searchbar.css';
 import { useHistory } from 'react-router-dom';
+import * as React from 'react';
 
 function SearchBar() {
   const [term, setTerm] = useState('');
@@ -11,6 +12,7 @@ function SearchBar() {
 
     history.push(`/search?q=${term}`);
   };
+
   return (
     <div className="searchbar">
       <form onSubmit={handleSubmit}>
