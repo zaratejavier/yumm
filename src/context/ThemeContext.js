@@ -2,7 +2,7 @@ import { createContext, useReducer } from 'react'; //allows us to create a new c
 
 import * as React from 'react';
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext(); // saving it to a variable
 
 const themeReducer = (state, action) => {
   switch (action.type) {
@@ -16,6 +16,7 @@ const themeReducer = (state, action) => {
 };
 
 export function ThemeProvider({ children }) {
+  // this is where we add the data
   const [state, dispatch] = useReducer(themeReducer, {
     color: '#58249c',
     mode: 'dark',
@@ -31,6 +32,6 @@ export function ThemeProvider({ children }) {
   return (
     <ThemeContext.Provider value={{ ...state, changeColor, changeMode }}>
       {children}
-    </ThemeContext.Provider>
+    </ThemeContext.Provider> // this provides the data to its children
   );
 }
