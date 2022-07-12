@@ -18,7 +18,7 @@ const themeReducer = (state, action) => {
 export function ThemeProvider({ children }) {
   // this is where we add the data
   const [state, dispatch] = useReducer(themeReducer, {
-    color: '#58249c',
+    color: '#145c8a',
     mode: 'dark',
   });
 
